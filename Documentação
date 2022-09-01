@@ -1,0 +1,9 @@
+O sistema coletará dados do usuário;
+
+O sistema chamará a função receberDados() caso o usuário insira algum valor inválido para o campo $modelo;
+
+O sistema chamará a função percorrerLista() para encontrar no array com nome $array um carro que possua cor e modelo com as quais o usuário inseriu nos respectivos campos. Dentro dessa função, possui um foreach que gera ao modelo um ano aleatório, que é inserido ao final do " print_r " adicionando a aleatoriedade ao resultado.
+
+Com o Array_push, o sistema adiciona os respectivos arrays no final do $array.
+
+
