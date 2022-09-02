@@ -1,7 +1,6 @@
 <?php
 
-    
-    $array = ['Corsa ', '1','branco'];
+$array = ['Corsa ', '1','branco'];
     $array1 = ['Prius ', '1', 'vermelho'];
     $array2 = ['HB20 ', '1', 'azul'];
     $array3 = ['Vectra', '2', 'preto'];
@@ -33,35 +32,27 @@
                 $array12,
                 $array13
 );
-
     array_push($lista, $array13);
 
+    $modelo = "";
     $ano = "";
     $nome = readline("Digite seu nome: ");
     $cor = readline("Digite a cor do carro: ");
+
     $modelo = readline("Digite o modelo (1 - Seda/ 2 - Hatch): ");
-    receberDados($modelo);
-    percorreLista($lista, $modelo, $cor, $nome, $ano);
-
-
-
-
-    function receberDados($modelo){
-
-        while (true){
-            if ($modelo > 0 && $modelo < 3) {
-
+    recebeDados($lista, $modelo, $cor, $nome, $ano);
+   
+    function recebeDados($lista, $modelo, $cor, $nome, $ano){
+        
+        while(true){               
+            if ($modelo == 1 || $modelo == 2){
                 break;
             } else {
-                $modelo = readline("Numero inserido inválido!\nDigite novamente o número dos modelos entre (1 - Seda/ 2 - Hatch): ");
+                $modelo = readline("Numero inserido inválido!". "Digite novamente: ");
+                percorreLista($lista, $modelo, $cor, $nome, $ano);
             }
         }
-    }
-
-        
-
-        
-
+    } 
 
     function percorreLista($lista, $modelo, $cor, $nome, $ano){
 
@@ -77,7 +68,7 @@
         for($i = 0; $i < count($lista); $i++){
             for($cont = 0;  $cont < count($lista); $cont++) {
                 if ($modelo == $lista[$i][1] && $cor == $lista[$i][2]) {
-                    echo  "Caro $nome, o modelo indicado é: "."\n";
+                    echo  "Caro(a) $nome, o modelo indicado é:  ";
                    print_r($lista[$i][0].$ano."\n");
                    
                 }break;
@@ -85,3 +76,5 @@
         
         }
     }
+
+?>
